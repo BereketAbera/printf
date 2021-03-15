@@ -11,13 +11,34 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i = 0, temp;
+	int count = 0, i = 0, isSpecial = 0, temp;
 	va_list printargs;
+	char pChar, tempChar;
 
 	va_start(printargs, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		tempChar = format[i];
+		if (!isSpecial && tempChar == '\\')
+		{
+			isSpecial = 1;
+			continue;
+		}
+
+		if (isSpecial)
+		{
+			pChar = tempChar == '\\' ? '\\' : tempChar == 'n' ? '\n' : tempChar == 't' ? '\t' : 0;
+			if (pChar == 0)
+			{
+				_putchar('\\');
+				_putchar(tempChar);
+			} else
+			{
+				_putchar(pChar);
+			}
+			isSpecial = 0;
+		}
+		if (tempChar == '%')
 		{
 			temp = resolve_format(format[i + 1], printargs);
 			if (temp <= 0)
@@ -26,7 +47,7 @@ int _printf(const char *format, ...)
 			i += 2;
 		} else
 		{
-			_putchar(format[i]);
+			_putchar(tempChar);
 			i++;
 			count++;
 		}

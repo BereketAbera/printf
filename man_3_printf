@@ -1,0 +1,16 @@
+.TH _printf 1 2021-03-13 GNU
+
+.SH _printf - custom implementation of function printf
+
+.SH SYNOPSIS
+.B _printf \fIFORMAT \fIARGUMENTS
+.B _printf \fIOPTIONS
+
+.SH DESCRIPTION
+.B _printf
+prints \fIARGUMENTS \fRaccording to \fIFORMAT \fRto the standard output
+FORMAT controls the output as in C  printf.   Interpreted  sequences are
+
+.SH FORMAT
+
+.SH ARGUMENTS
