@@ -3,14 +3,37 @@
 .SH _printf - custom implementation of function printf
 
 .SH SYNOPSIS
-.B _printf \fIFORMAT \fIARGUMENTS
-.B _printf \fIOPTIONS
+.B int _printf (\fIFORMAT, \fI...(ARGUMENTS));
 
 .SH DESCRIPTION
 .B _printf
-prints \fIARGUMENTS \fRaccording to \fIFORMAT \fRto the standard output
-FORMAT controls the output as in C  printf.   Interpreted  sequences are
+prints \fIARGUMENTS \fRaccording to \fIFORMAT \fRto the standard output. FORMAT controls the output as in C printf. Interpreted  sequences are
+.TP
+.B \e" double quote
+.TP
+.B \e' single quote
+.TP
+.B \e\e backslash
+.TP
+.B \eb backspace
+.TP
+.B \en new line
+.TP
+.B \ea alert
+.TP
+.B \er carriage return
+.TP
+.B \et horizontal tab
 
 .SH FORMAT
-
+.B \- %s to print a string
+.TP
+.B \- %c to print a single character
+.TP
+.B \- %% to print the character %
+.TP
+.B \- %d to print signed integer
+.TP
+.B \- %i to print signed integer
 .SH ARGUMENTS
+The arguements should be matched with formats passed in the format string above
