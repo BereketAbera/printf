@@ -4,8 +4,8 @@ The project is the first group project on low level programming at alx.
 ## How to use the fuction
 
 ### `_printf(FORMAT_STRING, ARGUMENTS)`
-The `format string` is where you will pass the special values listed below
-The `argments` are the corresponding values for the format string special values
+The `format string` is where you will pass the special values listed below and
+the `argments` are the corresponding values for the format string special values
 
 You can call the _printf fuction with the following arguments in the FORMAT string
 ### -%c
